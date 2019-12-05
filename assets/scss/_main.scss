@@ -1,0 +1,80 @@
+.v-application .markdown-body {
+  code {
+    &[class^='language-'] {
+      box-shadow: none;
+      background-color: transparent;
+    }
+
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+  kbd {
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+  table {
+    display: table;
+  }
+}
+
+.theme--dark.v-application .markdown-body {
+  color: #fff;
+
+  blockquote {
+    color: #999;
+  }
+
+  table tr {
+    background-color: #424242;
+  }
+  table td,
+  table th {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  // highlight css
+  .hljs-number, .hljs-string  {
+    color: #7ec699;
+  }
+  .hljs-title, .hljs-attr, .hljs-selector-id, .hljs-selector-class, .hljs-selector-attr, .hljs-selector-pseudo {
+    color: #f08d49;
+  }
+  .hljs-keyword {
+    color: #cc99cd;
+  }
+}
+
+.theme--dark.v-application {
+  table code {
+    color: #c0341d !important;
+    background-color: #fbe5e1 !important;
+  }
+  code {
+    color: #ccc;
+  }
+  .markdown-body .highlight pre,
+  .markdown-body pre {
+    background-color: #424242;
+  }
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  background-color: #f1f1f1;
+}
+
+.markdown-body table th {
+  text-align: left;
+}
+
+.v-application .container {
+  padding: 12px 16px;
+}
+
+.table-wrapper {
+  overflow: auto;
+}

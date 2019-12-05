@@ -1,0 +1,17 @@
+@mixin scrollBar($width: 8px, $height: 8px, $scrollBarBg: #f5f5f5, $scrollBarThumbBg: #c1c1c1) {
+  &::-webkit-scrollbar {
+    width: $width;
+    height: $height;
+    background-color: $scrollBarBg;
+  }
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.1);
+    border-radius: $height/2;
+    background-color: $scrollBarBg;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: $height/2;
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.1);
+    background-color: $scrollBarThumbBg;
+  }
+}

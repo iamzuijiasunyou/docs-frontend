@@ -1,5 +1,6 @@
 import colors from 'vuetify/es5/util/colors'
-
+import routes from './config/router'
+import docConfig from './doc.config'
 export default {
   mode: 'spa',
   /*
@@ -7,17 +8,18 @@ export default {
    */
   head: {
     titleTemplate: '%s - ' + process.env.npm_package_name,
-    title: process.env.npm_package_name || '',
+    title: 'Common Frontend Document',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content: 'Common Frontend Document'
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    base: { target: '_blank' }
   },
   /*
    ** Customize the progress-bar color
@@ -26,11 +28,15 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: [
+    'github-markdown-css',
+    'highlight.js/styles/github-gist.css',
+    '~/assets/scss/style.scss'
+  ],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['components'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -57,9 +63,9 @@ export default {
    ** https://github.com/nuxt-community/vuetify-module
    */
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
+    customVariables: ['~/assets/scss/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
@@ -80,6 +86,67 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        })
+      }
+      // add more loader
+      config.module.rules.push(
+        {
+          test: /\.md$/,
+          use: [
+            {
+              loader: 'vue-loader'
+            },
+            {
+              loader: 'vue-markdown-loader/lib/markdown-compiler',
+              options: {
+                raw: true,
+                use: [
+                  /* markdown-it plugin */
+                  require('markdown-it-anchor')
+                ]
+              }
+            }
+          ]
+        },
+        {
+          test: /\.docx$/,
+          use: [
+            {
+              loader: 'docx-loader',
+              options: {
+                removeLinks: true
+              }
+            }
+          ]
+        },
+        {
+          test: /\.(tmpl|html)$/,
+          use: {
+            loader: 'html-loader',
+            options: {
+              attrs: [':data-src']
+            }
+          }
+        }
+      )
+    }
+  },
+
+  /**
+   * Router config
+   */
+  router: {
+    base: docConfig.routerBase,
+    extendRoutes($routes, resolve) {
+      $routes.push(...routes)
+    }
   }
 }

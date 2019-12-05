@@ -19,5 +19,8 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
+    'no-console': 'off',
+    'vue/no-v-html': 0,
+    'vue/require-component-is': 0
   }
 }
