@@ -5,8 +5,8 @@ export default {
   // introduction
   introduction: '介绍',
   quickStart: '快速开始',
-  register: '注册',
-  // docx
-  docx: 'Docx',
-  docxIndex: 'Docx Test'
+  documentConfig: '文档配置',
+  components: '页面组件',
+  customization: '自定义',
+  notes: '注意事项'
 }

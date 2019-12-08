@@ -4,8 +4,8 @@
         "type": "section",
         "children": [
           {
-            "type": "docx",
-            "lang": "testDocx"
+            "type": "markdown",
+            "lang": "documentConfigMd"
           }
         ]
       }

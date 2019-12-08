@@ -4,9 +4,8 @@ export default {
   custom2: 'Custom2',
   // introduction
   introduction: 'Introduction',
-  quickStart: 'Overview',
-  register: 'Register',
-  // docx
-  docx: 'Docx Test',
-  docxIndex: 'Docx Example'
+  quickStart: 'QuickStart',
+  documentConfig: 'Document Config',
+  components: 'Components',
+  notes: 'Notes'
 }

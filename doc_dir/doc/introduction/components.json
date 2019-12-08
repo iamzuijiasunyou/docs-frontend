@@ -1,0 +1,25 @@
+{
+  "children": [
+    {
+      "type": "section",
+      "children": [
+        {
+          "type": "html",
+          "lang": "introHtml"
+        },
+        {
+          "type": "markdown",
+          "lang": "test-markdown"
+        },
+        {
+          "type": "html",
+          "lang": "test-html"
+        },
+        {
+          "type": "vue",
+          "lang": "test-vue"
+        }
+      ]
+    }
+  ]
+}

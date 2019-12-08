@@ -8,17 +8,13 @@ export default {
           lang: 'quickStart'
         },
         {
-          lang: 'register'
-        }
-      ]
-    },
-    {
-      lang: 'docx',
-      icon: 'mdi-file-chart',
-      children: [
+          lang: 'documentConfig'
+        },
         {
-          lang: 'docxIndex',
-          to: '/docx/test'
+          lang: 'components'
+        },
+        {
+          lang: 'notes'
         }
       ]
     }
