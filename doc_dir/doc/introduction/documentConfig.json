@@ -1,10 +1,10 @@
 {
     "children": [
       {
-        "type": "section",
+        "type": "DocSection",
         "children": [
           {
-            "type": "markdown",
+            "type": "DocMarkdown",
             "lang": "documentConfigMd"
           }
         ]

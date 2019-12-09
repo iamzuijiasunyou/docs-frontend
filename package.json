@@ -7,9 +7,11 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
+    "build:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt build",
+    "generate:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt generate",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "lint": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
+    "lint": "eslint --fix --ext .js,.vue .",
     "test": "jest"
   },
   "lint-staged": {
@@ -26,12 +28,13 @@
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
-    "@nuxtjs/vuetify": "^1.0.0",
     "@nuxtjs/eslint-config": "^1.0.1",
     "@nuxtjs/eslint-module": "^1.0.0",
+    "@nuxtjs/vuetify": "^1.0.0",
     "@vue/test-utils": "^1.0.0-beta.27",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.1.0",
+    "cross-env": "^6.0.3",
     "docx-loader": "^1.0.4",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^4.1.0",

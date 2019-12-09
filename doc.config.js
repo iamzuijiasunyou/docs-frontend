@@ -1,6 +1,6 @@
 export default {
   // router base
-  routerBase: process.env.NODE_ENV === 'production' ? '/doc' : '/',
+  routerBase: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/docs-frontend/' : '/',
   /**
    * doc config directory
    * default is ''

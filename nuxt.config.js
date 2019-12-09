@@ -148,5 +148,9 @@ export default {
     extendRoutes($routes, resolve) {
       $routes.push(...routes)
     }
+  },
+
+  generate: {
+    dir: 'docs'
   }
 }

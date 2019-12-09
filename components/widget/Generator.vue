@@ -1,5 +1,5 @@
 <template>
-  <component :is="is" :config="config" />
+  <component :is="is" :config="config" v-bind="config.attrs || {}" />
 </template>
 
 <script>
@@ -14,7 +14,7 @@ export default {
   },
   computed: {
     is() {
-      return `Doc${upperFirst(this.config.type)}`
+      return `${upperFirst(this.config.type)}`
     }
   }
 }

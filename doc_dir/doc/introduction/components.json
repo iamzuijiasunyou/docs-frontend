@@ -1,22 +1,22 @@
 {
   "children": [
     {
-      "type": "section",
+      "type": "DocSection",
       "children": [
         {
-          "type": "html",
+          "type": "DocHtml",
           "lang": "introHtml"
         },
         {
-          "type": "markdown",
+          "type": "DocMarkdown",
           "lang": "test-markdown"
         },
         {
-          "type": "html",
+          "type": "DocHtml",
           "lang": "test-html"
         },
         {
-          "type": "vue",
+          "type": "DocVue",
           "lang": "test-vue"
         }
       ]

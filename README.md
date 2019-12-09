@@ -1,6 +1,8 @@
 # Readme
 
 > a common document frontend project
+> [中文文档](https://iamzuijiasunyou.github.io/docs-frontend/cn/introduction/quickStart)
+> [English Document](https://iamzuijiasunyou.github.io/docs-frontend/en/introduction/quickStart)
 
 ## 技术选型
 前端框架：Nuxt.js(Vue.js), Vuetifyjs<br>
