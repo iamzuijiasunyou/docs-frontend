@@ -1,8 +1,17 @@
 <template>
   <v-layout>
-    <div>
-      <h3>Common Document</h3>
-      <nuxt-link to="cn/introduction/quickStart">文档</nuxt-link>
+    <div class="page-index">
+      <h3>Document</h3>
+      <ul class="link-list">
+        <li>
+          <nuxt-link to="/cn/introduction/quickStart">中文文档</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/en/introduction/quickStart"
+            >English Document</nuxt-link
+          >
+        </li>
+      </ul>
     </div>
   </v-layout>
 </template>
@@ -14,3 +23,12 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.page-index {
+  padding: 20px;
+  li {
+    margin-top: 10px;
+  }
+}
+</style>
