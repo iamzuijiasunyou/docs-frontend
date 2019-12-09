@@ -30,9 +30,13 @@ const getDocRouter = () => {
           const name = ['/', lang.name, dir, directory.directory, doc.title]
             .join('/')
             .replace(/\/{2,}/g, '/')
+          const routerPath = (docConfig.routerBase + name).replace(
+            /\/{2,}/g,
+            '/'
+          )
           docRoutes.push({
             name,
-            path: name,
+            path: routerPath,
             component: documentComponent,
             props: {
               config: require(path)
